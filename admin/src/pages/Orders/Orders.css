@@ -1,0 +1,177 @@
+/* Page wrapper */
+.orders-page {
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Header bar similar simple style */
+.orders-header-bar {
+  margin-bottom: 15px;
+}
+
+.orders-header-bar h2 {
+  margin: 0;
+  font-size: 22px;
+  color: tomato;
+}
+
+.orders-header-bar p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* TABLE WRAPPER */
+.orders-table {
+  border: 1px solid #cacaca;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Each row – similar to .list-table-format */
+.orders-row {
+  display: grid;
+  grid-template-columns: 0.6fr 2fr 0.8fr 1.2fr 2.2fr 1.1fr; /* Order | Items | Amount | Status | Address | Created */
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+/* Header row – similar to .list-table-format.title */
+.orders-row-head {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* Remove border for last row */
+.orders-row:last-child {
+  border-bottom: none;
+}
+
+/* Order id style */
+.orders-orderid {
+  font-weight: 600;
+  color: tomato;
+}
+
+/* Amount */
+.orders-amount {
+  font-weight: 600;
+}
+
+/* Address & items text */
+.orders-items,
+.orders-address,
+.orders-date {
+  color: #555;
+  font-size: 12px;
+}
+
+/* Select for status – simple tomato border */
+.orders-row span > select {
+  width: 100%;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid tomato;
+  font-size: 12px;
+  background-color: #fff;
+  outline: none;
+}
+
+.orders-row span > select:focus {
+  box-shadow: 0 0 0 1px rgba(255, 99, 71, 0.4);
+}
+
+/* Status pill (as text below select) */
+.orders-status {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+}
+
+/* Variants from your getStatusClass mapping */
+.orders-status-foodprocessing {
+  color: #b35a00;
+  border-color: #f6c38b;
+  background-color: #fff3e0;
+}
+
+.orders-status-outfordelivery {
+  color: #0b5ea8;
+  border-color: #9dc4ec;
+  background-color: #e7f2ff;
+}
+
+.orders-status-delivered {
+  color: #0c7a25;
+  border-color: #9ad9a8;
+  background-color: #e8ffe9;
+}
+
+.orders-status-cancelled {
+  color: #b12020;
+  border-color: #f3a4a4;
+  background-color: #ffe9e9;
+}
+
+/* Loading / empty text */
+.orders-loading,
+.orders-empty {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Optional cursor utility (like your .cursor) */
+.cursor {
+  cursor: pointer;
+  color: tomato;
+  font-size: 20px;
+}
+
+/* RESPONSIVE – similar to your media query */
+
+@media (max-width: 600px) {
+  .orders-page {
+    padding: 10px;
+  }
+
+  /* Hide table header like .list-table-format.title */
+  .orders-row-head {
+    display: none;
+  }
+
+  .orders-table {
+    border-radius: 0;
+  }
+
+  .orders-row {
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+    gap: 8px;
+    padding: 10px 8px;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  .orders-orderid {
+    grid-column: 1 / span 2;
+  }
+
+  .orders-address {
+    grid-column: 1 / span 2;
+  }
+
+  .orders-date {
+    font-size: 11px;
+  }
+}
+
+
+  
